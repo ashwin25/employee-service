@@ -4,17 +4,26 @@ FROM openjdk:8-jdk-alpine
 # Add Maintainer Info
 LABEL maintainer="Anand Zaveri"
 
+ENV APP_HOME=/usr/app/
+ENV JAR_FILE=build/libs/employee-service-0.0.1-SNAPSHOT.jar
+WORKDIR $APP_HOME
+COPY build.gradle settings.gradle gradlew $APP_HOME
+COPY gradle $APP_HOME/gradle
+RUN ./gradlew build
+
+COPY build/libs/employee-service-0.0.1-SNAPSHOT.jar employee-service.jar 
+
 # Add a volume pointing to /tmp
-VOLUME /tmp
+#VOLUME /tmp
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=build/libs/employee-service-0.0.1-SNAPSHOT.jar
+#ARG JAR_FILE=build/libs/employee-service-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} employee-service.jar
+#ADD ${JAR_FILE} employee-service.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/employee-service.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","employee-service.jar"]

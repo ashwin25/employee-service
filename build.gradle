@@ -19,6 +19,10 @@ repositories {
 	mavenCentral()
 }
 
+springBoot {
+    mainClassName = 'com.container.example.employeeservice.EmployeeServiceApplication'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
