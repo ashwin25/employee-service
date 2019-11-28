@@ -5,13 +5,22 @@ FROM openjdk:8-jdk-alpine
 LABEL maintainer="Anand Zaveri"
 
 ENV APP_HOME=/usr/app/
+
 ENV JAR_FILE=build/libs/employee-service-0.0.1-SNAPSHOT.jar
+
 WORKDIR $APP_HOME
-COPY build.gradle settings.gradle gradlew $APP_HOME
-COPY gradle $APP_HOME/gradle
+
+#COPY build.gradle settings.gradle gradlew $APP_HOME
+#COPY gradle $APP_HOME/gradle
+#RUN ./gradlew build
+
+COPY . $APP_HOME
+
+RUN chmod +x gradlew
+
 RUN ./gradlew build
 
-COPY build/libs/employee-service-0.0.1-SNAPSHOT.jar employee-service.jar 
+COPY mv build/libs/employee-service-0.0.1-SNAPSHOT.jar employee-service.jar 
 
 # Add a volume pointing to /tmp
 #VOLUME /tmp
