@@ -20,7 +20,7 @@ RUN chmod +x gradlew
 
 RUN ./gradlew build
 
-COPY mv build/libs/employee-service-0.0.1-SNAPSHOT.jar employee-service.jar 
+RUN mv build/libs/employee-service-0.0.1-SNAPSHOT.jar employee-service.jar 
 
 # Add a volume pointing to /tmp
 #VOLUME /tmp
