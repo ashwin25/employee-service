@@ -23,7 +23,7 @@ import com.container.example.employeeservice.exception.ResourceNotFoundException
 import com.container.example.employeeservice.exception.repository.EmployeeRepository;
 import com.container.example.employeeservice.model.Employee;
 
-@RestController @CrossOrigin(origins = "*")
+@RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
     @Autowired

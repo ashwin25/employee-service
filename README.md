@@ -23,3 +23,7 @@ docker stop <container-id obtained from docker ps>
 # To remove an image
 
 docker rmi <image id obtained from docker ps>
+
+# To go inside the container
+
+docker exec -it <docker container id> /bin/sh
