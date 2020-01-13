@@ -45,6 +45,9 @@ public class EmployeeController {
     
     @PostMapping("/employees")
     public Employee createEmployee(@Valid @RequestBody Employee employee) {
+        int totalEmployees = employeeRepository.findAll().size();
+        int newEmployeeId = totalEmployees + 1;
+        employee.setId(newEmployeeId);
         return employeeRepository.save(employee);
     }
 
