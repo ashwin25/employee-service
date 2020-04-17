@@ -20,12 +20,12 @@ public class EmployeeRepository {
 	@PostConstruct
 	public void init() {
 		empMap = new ConcurrentHashMap<>();
-		empMap.put(1L, new Employee(1L, "Pradeep", "Singh", "Pradeep.Singh2@gmail.com"));
-		empMap.put(2L, new Employee(2L, "Anand", "Zaveri", "Anand.Zaveri@gmail.com"));
-		empMap.put(3L, new Employee(3L, "Akhilesh", "Juyal", "Akhilesh.Juyal@gmail.com"));
-		empMap.put(4L, new Employee(4L, "Vaibhav", "Jha", "Vaibhav.Jha@outlook.com"));
-		empMap.put(5L, new Employee(5L, "Himanshu", "Sharma", "Himanshu.Sharma@yahoo.com"));
-		empMap.put(6L, new Employee(6L, "Jignesh", "Mehta", "Jignesh.Mehta@outlook.com"));
+		empMap.put(1L, new Employee(1L, "Ashwin", "Prakash", "ashwinprakash99@gmail.com"));
+		empMap.put(2L, new Employee(2L, "Tom", "Baker", "Tom.Baker@gmail.com"));
+		empMap.put(3L, new Employee(3L, "Aditya", "Jadhav", "Aditya.Jadhav@gmail.com"));
+		empMap.put(4L, new Employee(4L, "Tarun", "Jain", "Tarun.Jain@outlook.com"));
+		empMap.put(5L, new Employee(5L, "Hariharan", "Yuviraj", "Hariharan.Y@yahoo.com"));
+		empMap.put(6L, new Employee(6L, "Hitesh", "Mehta", "Hitesh.Mehta@outlook.com"));
 	}
 	
 	public List<Employee> findAll(){
